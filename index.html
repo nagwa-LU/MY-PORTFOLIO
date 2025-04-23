@@ -5,54 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- إضافة الخط -->
-    <link rel="preconnect"
-    href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href=https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
-    
-        
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
+
     <!-- ربط ملف الستايل -->
     <style>
-        body{font-family: 'Lora',serif;background-color:#f9f9f9; 
-             margin: 0
-                 padding: 20px;
-             line-hieght: 1.6;
-             color: #333;
-            }
-    h1, h2, h3 {
-      font-family: 'Special Gothic Condensed One', sans-serif;
-      color: #222;
-      margin-bottom: 10px;
-    }
+        body {
+            font-family: 'Lora', serif;
+            background-color: #ffe6f0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
 
-    /* الفقرات */
-    p {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
+        h1, h2, h3 {
+            font-family: 'Special Gothic Condensed One', sans-serif;
+            color: #FF69B4;
+            margin-bottom: 10px;
+        }
 
-    /* البلوكات (مستطيلات) للفصل بين الأقسام */
-    .section {
-      background-color: #ffffff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .section-style {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .section-style.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #FF69B4;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: #FF69B4;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #FF1493;
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #FF69B4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #FF1493;
+        }
+
+        header, footer {
+            margin: 30px 0;
+        }
+
+        /* زر رجوع للأعلى */
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #FF69B4;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        #topBtn:hover {
+            background-color: #FF1493;
+        }
+    </style>
+</head>
+
+<body>
+
     <div class="container">
-  <div class="heart">❤</div>
-  <div class="welcome-message">Welcome to My Website!</div>
- 
-    <section class="profile">
-        <img src="profile.jpg.jpg" alt="My Profile Picture" class="profile-img">
-    
+        <img src="profile.jpg" alt="My Profile Picture" class="profile-img">
+        
         <div class="social-links">
             <a href="https://www.linkedin.com/in/nagwa-ghanem-720b9b356" target="_blank">LinkedIn</a>
             <a href="https://github.com/nagwa-LU" target="_blank">GitHub</a>
             <a href="mailto:nagwaghanem3w7@gmail.com">Email</a>
         </div>
-    </section>
+    </div>
 
     <header>
         <h1>WELCOME TO MY PORTFOLIO</h1>
@@ -78,23 +166,14 @@
         <!-- Hobbies -->
         <section id="hobbies" class="section-style">
             <h2>MY HOBBIES</h2>
-            
-            <p>I love coding and creating beautiful websites — it feels like magic to me!
-
-I'm always excited to learn new skills and explore new ideas online.
-
-I enjoy designing, organizing, and making everything look soft and lovely.
-
-Sharing motivational words and positive vibes is one of my favorite things.
-
-I adore cartoons and animation, especially the ones that bring back sweet memories.
-
-I'm a huge anime lover — Attack on Titan has a special place in my heart!
-
-I enjoy working on small creative projects that make life a little easier and brighter.</p>
-            </section>
-               
-        
+            <p>I love coding and creating beautiful websites — it feels like magic to me!<br>
+            I'm always excited to learn new skills and explore new ideas online.<br>
+            I enjoy designing, organizing, and making everything look soft and lovely.<br>
+            Sharing motivational words and positive vibes is one of my favorite things.<br>
+            I adore cartoons and animation, especially the ones that bring back sweet memories.<br>
+            I'm a huge anime lover — Attack on Titan has a special place in my heart!<br>
+            I enjoy working on small creative projects that make life a little easier and brighter.</p>
+        </section>
 
         <!-- Skills -->
         <section id="skills" class="section-style">
@@ -114,14 +193,59 @@ I enjoy working on small creative projects that make life a little easier and br
             <p>I AM WORKING ON IT (:</p>
         </section>
 
-        <section>
+        <section class="section-style">
             <h2>Always learning and growing >>:<</h2>
         </section>
+
     </main>
 
     <footer>
         <p>Copyright © 2025 NAGWA GHANEM. ALL RIGHTS RESERVED.</p>
     </footer>
+
+    <!-- زر الرجوع للأعلى -->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+    <script>
+        // إظهار الزر عند النزول
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("topBtn").style.display = "block";
+            } else {
+                document.getElementById("topBtn").style.display = "none";
+            }
+        }
+
+        // لما تدوس عليه يرجع للأعلى
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // تأثير ظهور ناعم للأقسام
+        const sections = document.querySelectorAll('.section-style');
+        const options = { threshold: 0.1 };
+        const observer = new IntersectionObserver(function(entries, observer){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <footer>
+  <p style="color:#FF69B4; font-size: 16px; text-align: center;">
+    Designed with love by <strong>Najwa Ghanem</strong> — 2025 <span style="font-size: 18px;">❤</span><br>
+    <small style="color:#999;">All rights reserved.</small>
+  </p>
+</footer>
+
 </body>
-            </html>
+</html>
                 

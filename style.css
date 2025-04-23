@@ -1,55 +1,116 @@
-/* استيراد الخطوط من جوجل */
+/* الخطوط */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Special+Gothic+Condensed+One&display=swap');
 
-/* تنسيق الجسم */
+/* الجسم */
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffe6f0; /* خلفية وردية ناعمة */
-  color: #FF69B4; /* كل النص لونه وردي */
+  background-color: #ffe6f0; /* خلفية وردية */
   font-family: 'Lora', serif;
-  text-align: center;
-  min-height: 100vh; /* تخلي الصفحة كلها مليانة */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #FF69B4;
 }
 
-/* تنسيق البروفايل */
+/* الكونتينر */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* القلب */
+.heart {
+  font-size: 40px;
+  color: #FF69B4;
+  animation: heartbeat 1.5s infinite;
+  margin-bottom: 10px;
+}
+
+/* رسالة الترحيب */
+.welcome-message {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  animation: fadeInDown 2s ease;
+}
+
+/* البروفايل */
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeInUp 2s ease;
 }
 
-/* تنسيق الصورة */
+/* الصورة */
 .profile-img {
   width: 180px;
   height: 180px;
-  border-radius: 50%; /* دائرية */
+  border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #FF69B4; /* برواز وردي */
-  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5); /* ظل وردي ناعم */
-  margin-bottom: 30px;
+  border: 5px solid #FF69B4;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
 }
 
-/* تنسيق اللينكات */
+/* تأثير لما تقفي على الصورة */
+.profile-img:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+/* الروابط */
 .social-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 /* شكل اللينكات */
 .social-links a {
   color: #FF69B4;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   transition: color 0.3s, transform 0.3s;
 }
 
-/* تأثير لما نحط الماوس */
+/* تأثير الماوس على اللينكات */
 .social-links a:hover {
-  color: #FF1493; /* وردي غامق */
+  color: #FF1493;
   transform: scale(1.1);
+}
+
+/* أنيميشن ترحيب */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* أنيميشن للطلوع */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* أنيميشن نبض القلب */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }
